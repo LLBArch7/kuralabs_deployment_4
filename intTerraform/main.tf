@@ -21,8 +21,11 @@ resource "aws_instance" "web_server01" {
   } 
 }
 
-resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
+module "vpc" {
+  source = "terraform-aws-modules/vpc/aws"
+
+  name = "main"
+  cidr = "10.0.0.0/16"
 }
 
 output "instance_ip" {
