@@ -33,6 +33,7 @@ resource "aws_vpc" "test-vpc" {
   enable_dns_hostnames = "true"
 }
 
+/*
 # ELASTIC IP 
 resource "aws_eip" "nat_eip_prob" {
   vpc = true
@@ -43,6 +44,7 @@ resource "aws_nat_gateway" "nat_gateway_prob" {
   allocation_id = aws_eip.nat_eip_prob.id
   subnet_id     = aws_subnet.subnet1.id
 }
+*/
 
 # SUBNET 1
 resource "aws_subnet" "subnet1" {
